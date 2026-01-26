@@ -7,12 +7,12 @@ import userEvent from "@testing-library/user-event";
 import {mockNavigate} from "../../../setup";
 
 vi.mock("@/features/project/components/steps/StepTable", () => ({
-    default: (id: number) => <></>,
+    default: () => <></>,
 }));
 
 let mockedUseGoals: Partial<UseGoalsAttributes> = {}
 vi.mock("@/hooks/useGoals", () => ({
-    default: (projectId: string) => mockedUseGoals,
+    default: () => mockedUseGoals,
 }))
 
 const goal1: Goal = {

@@ -1,8 +1,7 @@
 import {Goal} from "../../../../src/api/domain/projects/Goal";
 import {Priority} from "../../../../src/api/domain/predefined/Priority";
 import {GoalAccordion} from "../../../../src/features/project/components/goals/GoalAccordion";
-import {act, render, screen} from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import {render, screen} from "@testing-library/react";
 
 vi.mock("@/features/project/components/steps/StepTable", () => ({
     default: (id: number) => <></>,
