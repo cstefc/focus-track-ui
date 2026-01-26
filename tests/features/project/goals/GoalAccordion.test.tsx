@@ -4,7 +4,7 @@ import {GoalAccordion} from "../../../../src/features/project/components/goals/G
 import {render, screen} from "@testing-library/react";
 
 vi.mock("@/features/project/components/steps/StepTable", () => ({
-    default: (id: number) => <></>,
+    default: () => <></>,
 }));
 
 describe("GoalAccordion", () => {
