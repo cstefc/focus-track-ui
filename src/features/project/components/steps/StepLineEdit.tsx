@@ -50,7 +50,6 @@ export const StepLineEdit = ({step, submitHandler, cancelHandler}: StepLineEditP
                 <ZodTextField errors={errors?.requirements}
                               translation_scope={"projects"} item={`requirements`} register={register}/>
             </TableCell>
-
             <TableCell align="center">
                 <Controller
                     name={`status`}
@@ -83,6 +82,5 @@ export const StepLineEdit = ({step, submitHandler, cancelHandler}: StepLineEditP
                 </Stack>
             </TableCell>
         </TableRow>
-
     );
 }
