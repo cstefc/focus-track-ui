@@ -1,5 +1,5 @@
 import {StepLineAdd} from "../../../../src/features/project/components/steps/StepLineAdd";
-import {render, screen, waitFor} from "@testing-library/react";
+import {render, screen} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 describe("StepLineAdd", () => {
