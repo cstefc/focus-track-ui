@@ -21,7 +21,7 @@ export default function ProjectScreen(): JSX.Element {
             // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
             setProject(() => data);
         }
-    }, [loading]);
+    }, [data]);
 
     if (loading) return <Loading/>;
 
