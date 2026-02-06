@@ -3,6 +3,11 @@ name: deployment.yml
 on:
   push:
     branches: [ "main" ]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: cstefc/focus-track-ui
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -22,7 +27,7 @@ jobs:
       - name: Log in to GHCR
         uses: docker/login-action@v2
         with:
-          registry: ghcr.io
+          registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ github.token }}
 
@@ -37,13 +42,13 @@ jobs:
           --build-arg VITE_FIREBASE_APP_ID="${{ secrets.VITE_FIREBASE_APP_ID }}" \
           --build-arg VITE_API_URL="${{ secrets.VITE_API_URL }}" \
           --build-arg VITE_DEV="false" \
-          -t ghcr.io/cstefc/focus_track_ui:${{ github.sha }} \
+          -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
           .
 
       - name: Tag latest
-        run: docker tag ghcr.io/cstefc/focus_track_ui:${{ github.sha }} ghcr.io/cstefc/focus_track_ui:latest
+        run: docker tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} ghcr.io/cstefc/focus-track-ui:latest
 
       - name: Push Docker Image
         run: |
-          docker push ghcr.io/cstefc/focus_track_ui:${{ github.sha }}
-          docker push ghcr.io/cstefc/focus_track_ui:latest
+          docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
