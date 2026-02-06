@@ -104,7 +104,11 @@ export const StepLineAdd = ({goalId, onCreate, sequence}: StepLineEditProps) => 
                 </TableCell>
                 <TableCell align="center">
                     <Stack direction={"row"}>
-                        <Button color={"success"} onClick={() => {handleSubmit(onCreate)(); reset()}}><SaveOutlined/></Button>
+                        <Button color={"success"} onClick={() => {
+                            handleSubmit(onCreate)();
+                            reset();
+                            setAdding(false);
+                        }}><SaveOutlined/></Button>
                         <Button color={"error"} onClick={cancelHandler}><CancelIcon/></Button>
                     </Stack>
                 </TableCell>

@@ -8,7 +8,7 @@ export interface useGetApiResult<T> {
 
 export function useGetApi<T>(path: string): useGetApiResult<T> {
     const [loading, setLoading] = useState(true);
-    const [data, setData] = useState<T | null>();
+    const [data, setData] = useState<T | null | undefined>(undefined);
 
     useEffect(() => {
         getApi<T>(path).then((data: T | null) => {
