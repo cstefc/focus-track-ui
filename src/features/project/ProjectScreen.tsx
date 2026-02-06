@@ -17,18 +17,12 @@ export default function ProjectScreen(): JSX.Element {
         if (data !== null && data !== undefined && data.length > 0) {
             // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
             setProject(() => data?.[0]);
-        }else if (data === null){
-            // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
-            setProject(() => data);
+        }else if (!loading && data === null){
+            navigate("/projects");
         }
     }, [data]);
 
     if (loading) return <Loading/>;
-
-    if (project === null) {
-        navigate("/projects");
-        return <></>;
-    }
 
     return (
         <EmptyPage>
