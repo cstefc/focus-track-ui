@@ -22,7 +22,7 @@ export default function ProjectScreen(): JSX.Element {
 
     if (loading) return <Loading/>;
 
-    if (project === undefined) {
+    if (!loading && data === null) {
         navigate("/projects");
         return <></>;
     }

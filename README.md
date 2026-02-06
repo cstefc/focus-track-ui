@@ -10,7 +10,7 @@
 ![dark mode](https://img.shields.io/badge/dark%20mode-✓-000000?style=flat&logoColor=white)
 ![vitest](https://img.shields.io/badge/tests‑with‑Vitest-lightgrey?logo=vitest&logoColor=black)
 
-Focus Track is a React application for tracking personal projects and tasks, including a dedicated sport tracking feature. It uses TypeScript and Material UI to provide a modular, feature-driven frontend. The backend API supporting this application can be found on my GitHub [here](https://github.com/cstefc/focus_track_api) and is updated as new features are added to the frontend.
+Focus Track is a React application for tracking personal projects and tasks, including a dedicated sport tracking feature. It uses TypeScript and Material UI to provide a modular, feature-driven frontend. The backend API supporting this application can be found on my GitHub [here](https://github.com/cstefc/focus-track-api) and is updated as new features are added to the frontend.
 
 ---
 
@@ -23,7 +23,7 @@ Focus Track is a React application for tracking personal projects and tasks, inc
 - **Authentication:** Firebase Authentication (supports OAuth providers like Google)  
 - **i18n / Localization:** react-i18next  
 - **Testing:** Vitest  
-- **Backend:** [Custom API](https://github.com/cstefc/focus_track_api)
+- **Backend:** [Custom API](https://github.com/cstefc/focus-track-api)
 - **Environment & Deployment:** `.env` configuration, branch protection, and status rules  
 
 ---
@@ -78,8 +78,8 @@ VITE_DEV="true_or_false"
 ### Installation & Running
 
 ```
-git clone https://github.com/cstefc/focus_track_ui.git
-cd focus_track_ui
+git clone https://github.com/cstefc/focus-track-ui.git
+cd focus-track-ui
 npm install
 npm run dev
 ```
