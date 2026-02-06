@@ -1,5 +1,5 @@
 import {render, screen} from "@testing-library/react";
-import EditPanel from "../../../../src/features/projects/components/project-card/EditPanel";
+import EditPanel from "../../../../../src/features/projects/components/project-card/EditPanel";
 import userEvent from "@testing-library/user-event";
 
 describe("Edit Panel", () => {

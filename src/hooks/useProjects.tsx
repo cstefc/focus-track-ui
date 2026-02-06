@@ -3,7 +3,16 @@ import {CreateProject, Project, UpdateProject} from "@/api/domain/projects/Proje
 import {useGetApi} from "@/hooks/useGetApi";
 import {deleteApi, sendApi} from "@/api/apiCall";
 
-export default function useProjects() {
+export interface useProjectsAttributes {
+    loading: boolean,
+    data: Project[],
+    createProject: (data: CreateProject) => void,
+    updateProject: (data: UpdateProject) => void,
+    archiveProject: (data: UpdateProject) => void,
+    deleteProject: (id: number) => void,
+}
+
+export default function useProjects(): useProjectsAttributes {
 
     const [data, setData] = useState<Project[]>([]);
     const {data: fetched, loading} = useGetApi<Project[]>("/projects");

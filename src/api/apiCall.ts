@@ -1,11 +1,12 @@
 import {getAuth} from "firebase/auth";
+
 const API = import.meta.env.VITE_API_URL;
 
 
-export async function getApi<T>(path: string) {
+export async function getApi<T>(path: string): Promise<T | null> {
     const auth = getAuth();
-    if (auth.currentUser) {
-        try {
+    try {
+        if (auth.currentUser) {
             const result = await fetch(`${API}${path}`, {
                 method: "GET",
                 headers: {
@@ -13,20 +14,18 @@ export async function getApi<T>(path: string) {
                 },
             })
             if (result.ok) return await result.json() as T;
-
-        } catch (e) {
-            console.error(e);
         }
-    } else {
-        console.error("Unauthorized");
+    } catch (e) {
+        console.error(e);
     }
+
     return null;
 }
 
-export async function sendApi<T>(path: string, method: string, body: string) {
+export async function sendApi<T>(path: string, method: string, body: string): Promise<T | null> {
     const auth = getAuth();
-    if (auth.currentUser) {
-        try {
+    try {
+        if (auth.currentUser) {
             const result = await fetch(`${API}${path}`, {
                 method: method.toUpperCase(),
                 body: body,
@@ -38,31 +37,28 @@ export async function sendApi<T>(path: string, method: string, body: string) {
             if (result.ok) {
                 return await result.json() as T;
             }
-        } catch (e) {
-            console.error(e);
-        }
 
-    } else {
-        console.error("Unauthorized");
+        }
+    } catch (e) {
+        console.error(e);
     }
     return null
 }
 
-export function deleteApi(path: string) {
+export async function deleteApi(path: string): Promise<void> {
     const auth = getAuth();
-    if (auth.currentUser) {
-        auth.currentUser.getIdToken().then(idToken => {
+    try {
+        if (auth.currentUser) {
+            const token = await auth.currentUser.getIdToken();
             void fetch(`${API}${path}`, {
                 method: "DELETE",
                 headers: {
-                    Authorization: auth.currentUser ? `Bearer ${idToken}` : '',
+                    Authorization: auth.currentUser ? `Bearer ${token}` : '',
                 },
             })
-                .catch(e => console.error(e));
-        })
-            .catch(e => console.error(e));
-    } else {
-        console.error("Unauthorized");
+        }
+    } catch (e) {
+        console.error(e);
     }
 }
 

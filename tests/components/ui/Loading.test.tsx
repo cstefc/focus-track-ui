@@ -4,7 +4,6 @@ import Loading from "@/components/ui/Loading";
 describe("loading", async () => {
     it("should render the component", () => {
         render(<Loading />);
-        screen.debug()
         const circle = screen.getByRole("progressbar")
         expect(circle).toBeInTheDocument();
     })

@@ -7,8 +7,8 @@ import {Status} from "@/api/domain/predefined/Status";
 import {useTranslation} from "react-i18next";
 
 export interface StepLineDisplayProps {
-    setEdit: (edit: boolean) => void;
     step: Step;
+    setEdit: (edit: boolean) => void;
     deleteHandler: (id: number) => void;
 }
 

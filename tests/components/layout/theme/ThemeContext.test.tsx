@@ -1,6 +1,8 @@
 import {CustomThemeProvider} from "../../../../src/components/layout/theme/ThemeContext";
 import {render, screen} from "@testing-library/react";
 import {useTheme} from "@/components/layout/theme/ThemeContext";
+import { Button } from "@mui/material";
+import userEvent from "@testing-library/user-event";
 
 
 describe('ThemeContext', () => {
@@ -60,12 +62,17 @@ describe('ThemeContext', () => {
         expect(screen.getByText("dark")).toBeInTheDocument();
     });
 
-    it("should be able to change the theme", () => {
+    it("should be able to change the theme", async () => {
         // GIVEN
+        const user = userEvent.setup()
         const TestComponent = () => {
             const {mode, changeMode} = useTheme();
-            changeMode("light");
-            return (<p>{mode}</p>);
+            return (
+                <>
+                <Button onClick={() => changeMode("light")}>Click Me!</Button>
+                    <p>{mode}</p>
+                </>
+            );
         }
 
         // WHEN
@@ -73,13 +80,11 @@ describe('ThemeContext', () => {
             <CustomThemeProvider>
                 <TestComponent/>
             </CustomThemeProvider>
-
         )
+        await user.click(screen.getByText("Click Me!"))
 
         // THEN
         expect(screen.getByText("light")).toBeInTheDocument();
         expect(localStorage.getItem("theme")).toEqual("light")
     });
-
-
 })
