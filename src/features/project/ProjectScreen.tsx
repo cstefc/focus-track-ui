@@ -10,19 +10,22 @@ import {EmptyPage} from "@/components/layout/EmptyPage";
 export default function ProjectScreen(): JSX.Element {
     const {id} = useParams<{ id: string }>();
     const {data, loading} = useGetApi<Project[]>(`/projects?id=${id}`);
-    const [project, setProject] = useState<Project | undefined>(undefined);
+    const [project, setProject] = useState<Project | undefined | null>(undefined);
     const navigate = useNavigate();
 
     useEffect(() => {
         if (data !== null && data !== undefined && data.length > 0) {
             // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
             setProject(() => data?.[0]);
+        }else if (data === null){
+            // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
+            setProject(() => data);
         }
-    }, [data]);
+    }, [loading]);
 
     if (loading) return <Loading/>;
 
-    if (!loading && data === null) {
+    if (project === null) {
         navigate("/projects");
         return <></>;
     }

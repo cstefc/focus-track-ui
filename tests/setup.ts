@@ -3,6 +3,8 @@ import "@testing-library/jest-dom/vitest";
 import {vi} from 'vitest';
 import {User} from "firebase/auth";
 
+vi.stubEnv("VITE_API_URL", "/api")
+
 export const mockNavigate = vi.fn();
 export const mockChangeLanguage = vi.fn();
 export const test_user = {
