@@ -23,7 +23,7 @@ export default function ProjectCards({showWithArchived}: ProjectScreenProps) {
     return (
         <>
             {/** Create project button + modal*/}
-            <CreateProjectDialog visible={!showWithArchived}/>
+            {!showWithArchived && <CreateProjectDialog/>}
 
             {/** List the project cards*/}
             <Grid container spacing={1}>

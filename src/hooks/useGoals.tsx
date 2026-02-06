@@ -3,7 +3,15 @@ import {CreateGoal, Goal, UpdateGoal} from "@/api/domain/projects/Goal";
 import {useEffect, useState} from "react";
 import {deleteApi, sendApi} from "@/api/apiCall";
 
-export default function useGoals(projectId: string) {
+export interface UseGoalsAttributes {
+    loading: boolean;
+    goals: Goal[];
+    createGoal: (data: CreateGoal) => void;
+    updateGoal: (data: UpdateGoal) => void;
+    deleteGoal: (idx: number) => void;
+}
+
+export default function useGoals(projectId: string): UseGoalsAttributes {
     const {data, loading} = useGetApi<Goal[]>(`/goals?id=${projectId}`);
     const [goals, setGoals] = useState<Goal[]>([])
 

@@ -26,7 +26,6 @@ describe("AuthContainer", () => {
 
         // WHEN
         render(<AuthContainerTitle user={user}/>);
-        screen.debug()
 
         // THEN
         const photo = screen.queryByRole('img');

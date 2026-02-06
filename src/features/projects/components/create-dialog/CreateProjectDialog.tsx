@@ -7,11 +7,8 @@ import {Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Stack} f
 import {ZodTextField} from "@/components/ui/forms/ZodTextField";
 import {useProjectsContext} from "@/features/projects/ProjectsScreen";
 
-export interface CreateProjectDialogProps {
-    visible: boolean;
-}
 
-export default function CreateProjectDialog({visible}: CreateProjectDialogProps): JSX.Element {
+export default function CreateProjectDialog(): JSX.Element {
     const {t} = useTranslation("projects");
     const [showDialog, setShowDialog] = useState(false);
     const {createProject} = useProjectsContext()
@@ -32,7 +29,7 @@ export default function CreateProjectDialog({visible}: CreateProjectDialogProps)
     return (
         <>
             <Box display={"flex"} justifyContent={"flex-end"} margin={2}>
-                <Button variant={"contained"} hidden={!visible}
+                <Button variant={"contained"} hidden={!showDialog}
                         onClick={() => setShowDialog(true)}
                 >
                     {t("button.createProject")}

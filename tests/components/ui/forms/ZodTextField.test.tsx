@@ -19,7 +19,6 @@ describe('ZodTextField', () => {
             <ZodTextField
                 translation_scope="test"
                 item="username"
-                itemKey="username"
                 register={register}
                 errors={undefined}
             />
@@ -46,7 +45,6 @@ describe('ZodTextField', () => {
             <ZodTextField
                 translation_scope="test"
                 item="username"
-                itemKey="username"
                 register={register}
                 errors={undefined}
             />

@@ -26,7 +26,6 @@ describe("LanguageBox Component", () => {
 
         // WHEN
         render(<LanguageBox/>);
-        screen.debug()
         await user.click(screen.getByText("EN"));
         await user.click(screen.getByText("NL"));
 
