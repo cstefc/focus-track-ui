@@ -18,8 +18,8 @@ export default function MyDesktopAppBar() {
     return (
         <>
             <AppBarLogo/>
-            <Stack direction={"row"} flexGrow={1} display={{xs: "none", md: "flex"}}>
-                <Stack direction="row" spacing={2} alignItems="center">
+            <Stack direction={"row"} sx={{flexGrow: 1, display: {xs: "none", md: "flex"}}}>
+                <Stack direction="row" spacing={2} sx={{alignItems: "center"}}>
                     {currentRoutes.map((route: RouteType) =>
                         <ListItem
                             key={route.name}
@@ -34,7 +34,7 @@ export default function MyDesktopAppBar() {
                     )}
                 </Stack>
 
-                <Stack direction={"row"} spacing={2} marginInlineStart={"auto"}>
+                <Stack direction={"row"} spacing={2} sx={{marginInlineStart: "auto"}}>
                     <LanguageBox/>
                     <ThemeBox/>
                     <AuthContainer/>

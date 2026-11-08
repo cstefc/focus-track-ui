@@ -46,7 +46,7 @@ export default function AuthContainer() {
     }
 
     return (
-        <Box display={"flex"} alignItems={"center"}>
+        <Box sx={{display: "flex", alignItems: "center"}}>
             <Box
                 onClick={handleOpen}
                 sx={{

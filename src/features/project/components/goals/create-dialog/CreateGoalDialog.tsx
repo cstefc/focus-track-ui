@@ -25,11 +25,11 @@ export default function CreateGoalDialog({projectId, createHandler}: CreateGoalD
         },
     });
 
-    const onSubmit = async () => {
-        void handleSubmit(createHandler)();
+    const onSubmit = handleSubmit((data) => {
+        createHandler(data);
         setShow(false);
         reset();
-    }
+    });
 
     return (
         <>

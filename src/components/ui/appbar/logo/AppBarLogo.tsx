@@ -6,14 +6,9 @@ export default function AppBarLogo() {
     const navigate = useNavigate();
 
     return (
-        <Box display={"flex"} alignItems="center"
-             sx={{
-                 cursor: "pointer",
+        <Box sx={{display: "flex", alignItems: "center", cursor: "pointer",
                  marginRight: "16px",
-                 "&:hover": {opacity: 0.8},
-             }}
-
-             onClick={() => navigate("/")}
+                 "&:hover": {opacity: 0.8}}} onClick={() => navigate("/")}
         >
             {/** <Avatar
              src="/FocusTrackLogo_600x600.jpg"

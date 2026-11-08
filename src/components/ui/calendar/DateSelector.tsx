@@ -29,12 +29,7 @@ export default function DateSelector({date, setDate}: DateSelectorProps) {
 
     return (
         <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            sx={{
-                p: 2,
-            }}
+            direction="row" sx={{justifyContent: "space-between", alignItems: "center", p: 2}}
         >
             <Button
                 variant="outlined"

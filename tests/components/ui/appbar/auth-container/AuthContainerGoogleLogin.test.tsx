@@ -1,3 +1,4 @@
+import {MenuList} from "@mui/material";
 import AuthContainerGoogleLogin from "@/components/ui/appbar/auth-container/AuthContainerGoogleLogin";
 import {render, screen} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -7,8 +8,8 @@ describe("AuthContainerGoogleLogin Component", () => {
         // GIVEN
 
         // WHEN
-        render(<AuthContainerGoogleLogin hidden={false} handleLogin={() => {
-        }}/>);
+        render(<MenuList><AuthContainerGoogleLogin hidden={false} handleLogin={() => {
+        }}/></MenuList>);
 
         // THEN
         const link = screen.getByText("authentication.google.signIn");
@@ -24,8 +25,8 @@ describe("AuthContainerGoogleLogin Component", () => {
         // GIVEN
 
         // WHEN
-        render(<AuthContainerGoogleLogin hidden={true} handleLogin={() => {
-        }}/>)
+        render(<MenuList><AuthContainerGoogleLogin hidden={true} handleLogin={() => {
+        }}/></MenuList>)
 
         // THEN
         const link = screen.queryByText("authentication.google.signIn");
@@ -38,7 +39,7 @@ describe("AuthContainerGoogleLogin Component", () => {
         const loginMock = vi.fn();
 
         // WHEN
-        render(<AuthContainerGoogleLogin hidden={false} handleLogin={loginMock}/>)
+        render(<MenuList><AuthContainerGoogleLogin hidden={false} handleLogin={loginMock}/></MenuList>)
         await user.click(screen.getByText('authentication.google.signIn'));
 
         // THEN

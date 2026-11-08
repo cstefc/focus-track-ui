@@ -1,6 +1,6 @@
 import {Goal, UpdateGoal} from "@/api/domain/projects/Goal";
 import GoalAccordionEdit from "@/features/project/components/goals/GoalAccordionEdit";
-import GoalAccordionDisplay from "@/features/project/components/goals/GoalAccordionDisplay";
+import {GoalAccordionDisplay} from "@/features/project/components/goals/GoalAccordionDisplay";
 import {Accordion, AccordionDetails} from "@mui/material";
 import StepTable from "@/features/project/components/steps/StepTable";
 import React, {useState} from "react";

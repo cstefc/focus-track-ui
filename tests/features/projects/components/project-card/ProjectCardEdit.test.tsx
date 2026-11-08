@@ -113,7 +113,7 @@ describe("project card edit", () => {
 
         // WHEN
         render(<ProjectCardEdit project={project} onEdit={onEdit}/>)
-        await user.click(screen.getByTestId("DeleteOutlineIcon"))
+        await user.click(screen.getByTestId("DeleteOutlinedIcon"))
         await user.click(screen.getByText("button.continue"))
 
         // THEN

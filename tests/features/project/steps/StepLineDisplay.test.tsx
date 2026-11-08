@@ -57,7 +57,7 @@ describe("StepLineDisplay", () => {
                 </tbody>
             </table>
         )
-        await user.click(screen.getByTestId("DeleteOutlineIcon"))
+        await user.click(screen.getByTestId("DeleteOutlinedIcon"))
 
         // THEN
         expect(mockDeleteHandler).toHaveBeenCalledWith(1)

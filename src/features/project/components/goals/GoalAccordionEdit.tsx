@@ -32,7 +32,7 @@ export default function GoalAccordionEdit({goal, submitHandler, cancelHandler}: 
                               register={register} errors={errors.title}/>
             </AccordionSummary>
             <AccordionDetails>
-                <Stack direction={"row"} justifyContent={"flex-end"} spacing={0}>
+                <Stack direction={"row"} spacing={0} sx={{justifyContent: "flex-end"}}>
                     <ZodTextField translation_scope={"projects"} item={"description"}
                                   register={register} errors={errors.description}
                     />

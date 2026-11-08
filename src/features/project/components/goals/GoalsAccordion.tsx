@@ -21,7 +21,7 @@ export function GoalsAccordion({projectId}: GoalsAccordionProps) {
 
     return (
         <>
-            <Stack direction={"row"} spacing={1} display={"flex"} margin={1} justifyContent={"flex-end"}>
+            <Stack direction={"row"} spacing={1} sx={{display: "flex", margin: 1, justifyContent: "flex-end"}}>
                 <Button color={"secondary"} onClick={() => navigate(`/projects/`)}>
                     {t("button.back")}
                 </Button>

@@ -7,7 +7,7 @@ export interface EmptyPageProps {
 
 export function EmptyPage({children}: EmptyPageProps) {
     return (
-        <Box padding={{xs: 1, md: 4}}>
+        <Box sx={{padding: {xs: 1, md: 4}}}>
             {children}
         </Box>
     )

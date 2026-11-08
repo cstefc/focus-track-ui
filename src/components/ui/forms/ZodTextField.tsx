@@ -28,8 +28,8 @@ export function ZodTextField<T extends FieldValues>({
                 e.stopPropagation()
             }}
             margin="dense"
-            label={t(`forms.${item}Label`)}
-            placeholder={t(`forms.${item}Placeholder`)}
+            label={t(`forms.${item as string}Label`)}
+            placeholder={t(`forms.${item as string}Placeholder`)}
             {...register(item)}
             error={!!errors}
             helperText={errors?.message}

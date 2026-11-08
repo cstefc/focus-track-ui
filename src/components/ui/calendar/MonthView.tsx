@@ -23,12 +23,10 @@ export default function MonthView({selected, setSelected}: MonthViewProps) {
     rows.push(curr);
 
     return (
-        <Box display={"grid"} gridTemplateColumns={"repeat(auto-fill, 1fr)"} gap={"0.25rem"} padding={"0.5rem"}
-             boxSizing={"border-box"}
+        <Box sx={{display: "grid", gridTemplateColumns: "repeat(auto-fill, 1fr)", gap: "0.25rem", padding: "0.5rem", boxSizing: "border-box"}}
         >
             {rows.map((row: Date[]) => (
-                <Box display={"grid"} gridTemplateColumns={"repeat(7, 1fr)"} gap={"0.25rem"}
-                     key={"week: " + row[0].getTime()}>
+                <Box key={"week: " + row[0].getTime()} sx={{display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "0.25rem"}}>
                     {row.map((date) => (
                         <DayButton key={date.getTime()} date={date} selected={selected} setSelected={setSelected}/>
                     ))}

@@ -10,7 +10,7 @@ export interface CalendarViewProps {
 
 export default function Calendar({date, setDate}: CalendarViewProps) {
     return (
-        <Box display={"flex"} flexDirection={"column"}>
+        <Box sx={{display: "flex", flexDirection: "column"}}>
             <DateSelector date={date} setDate={setDate}/>
             <MonthView selected={date} setSelected={setDate}/>
         </Box>

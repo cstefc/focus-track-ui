@@ -62,7 +62,7 @@ export function ProjectCardEdit({project, onEdit}: ProjectCardEditProps) {
             </CardContent>
 
             <CardActions>
-                <Box display={"flex"} justifyContent={"center"} width={"100%"} marginInlineEnd={"8px"}>
+                <Box sx={{display: "flex", justifyContent: "center", width: "100%", marginInlineEnd: "8px"}}>
                     <EditPanel isSubmitting={isSubmitting}
                                onSave={onSave}
                                onDelete={onDelete}

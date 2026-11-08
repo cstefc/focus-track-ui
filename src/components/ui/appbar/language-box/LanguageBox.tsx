@@ -16,7 +16,7 @@ export default function LanguageBox() {
     };
 
     return (
-        <Box display={"flex"} alignItems={"flex-start"}>
+        <Box sx={{display: "flex", alignItems: "flex-start"}}>
             <ListItem
                 key={currentLanguage}
                 onClick={handleOpen}

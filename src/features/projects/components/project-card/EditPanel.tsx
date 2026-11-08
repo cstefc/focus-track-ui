@@ -1,7 +1,7 @@
 import {useTranslation} from "react-i18next";
 import {useState} from "react";
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle, Stack} from "@mui/material";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutlined";
 import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import CancelIcon from "@mui/icons-material/Cancel";
 import CheckIcon from "@mui/icons-material/Check";

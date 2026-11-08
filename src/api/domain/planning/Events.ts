@@ -1,4 +1,4 @@
-import {boolean, string, z} from "zod/index";
+import {boolean, string, z} from "zod";
 
 export interface Events {
     id: number;
