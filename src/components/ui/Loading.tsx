@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Loading() {
     return (
-        <Box display={"flex"} alignItems={"center"} justifyContent={"center"} sx={{height: "70vh"}}>
+        <Box sx={{display: "flex", alignItems: "center", justifyContent: "center", height: "70vh"}}>
             <CircularProgress/>
         </Box>
     );

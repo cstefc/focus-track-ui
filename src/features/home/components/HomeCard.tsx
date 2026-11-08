@@ -14,9 +14,9 @@ export default function HomeCard({card}: HomeCardProps) {
 
     return (
         <Card sx={{height: "320px", width: "320px", margin: "50px"}}>
-            <CardContent component={Box} height={"100%"} display="flex" flexDirection={"column"} justifyContent="space-around">
+            <CardContent component={Box} sx={{height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-around"}}>
                     <Typography gutterBottom variant="h5" component="div">{t(`cards.${card}.title`)}</Typography>
-                    <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
+                    <Box sx={{display: "flex", alignItems: "center", justifyContent: "center"}}>
                         <Typography variant="body1">{t(`cards.${card}.text`)}</Typography>
                     </Box>
             </CardContent>

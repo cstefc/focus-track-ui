@@ -7,7 +7,7 @@ export default function PlanningScreen() {
     const [date, setDate] = useState(() => new Date());
 
     return (
-        <Stack display={"flex"} direction={"row"} justifyContent={"center"}>
+        <Stack direction={"row"} sx={{display: "flex", justifyContent: "center"}}>
             {/* Left Column */}
             <Typography variant="h5" sx={{m: 4}}>
                 TODO: Add overview month stats
@@ -15,7 +15,7 @@ export default function PlanningScreen() {
 
 
             {/* Center Calendar Column */}
-            <Stack direction={"column"} display={"flex"} justifyContent={"center"} alignItems={"center"} gap={2}>
+            <Stack direction={"column"} sx={{display: "flex", justifyContent: "center", alignItems: "center", gap: 2}}>
                 <DayView date={date}/>
                 <Calendar date={date} setDate={setDate}/>
             </Stack>

@@ -70,9 +70,9 @@ describe("Calendar", () => {
         render(<Wrapper/>);
 
         // THEN
-        expect(screen.getByText("20")).toHaveClass("MuiButton-outlinedPrimary");
+        expect(screen.getByText("20")).toHaveClass("MuiButton-outlined");
         await user.click(screen.getByText("20"));
-        expect(screen.getByText("20")).toHaveClass("MuiButton-containedPrimary");
+        expect(screen.getByText("20")).toHaveClass("MuiButton-contained");
     });
 
     test("today default selected", () => {
@@ -85,6 +85,6 @@ describe("Calendar", () => {
         // THEN
         const button = screen.getByText("15");
         expect(button).toBeInTheDocument();
-        expect(button).toHaveClass("MuiButton-containedPrimary");
+        expect(button).toHaveClass("MuiButton-contained");
     })
 })

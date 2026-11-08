@@ -22,12 +22,7 @@ export default function Home(): JSX.Element {
     }
 
     return (
-        <Stack minHeight={"90vh"}
-               direction={"column"}
-               spacing={1}
-               display={"flex"}
-               justifyContent={"space-between"}
-               alignItems={"center"}
+        <Stack direction={"column"} spacing={1} sx={{minHeight: "90vh", display: "flex", justifyContent: "space-between", alignItems: "center"}}
 
         >
             {/* Hero section */}
@@ -46,7 +41,7 @@ export default function Home(): JSX.Element {
                     textShadow: "0 2px 8px rgba(0,0,0,0.5)",
                 }}
             >
-                <Typography variant="h3" fontWeight={700} sx={{whiteSpace: "pre-line", margin: "50px"}}>
+                <Typography variant="h3" sx={{fontWeight: 700, whiteSpace: "pre-line", margin: "50px"}}>
                     {t("title")}
                 </Typography>
             </Box>
@@ -77,7 +72,7 @@ export default function Home(): JSX.Element {
                 </Button>
             </Box>
 
-            <Grid container spacing={1} justifyContent={"center"}>
+            <Grid container spacing={1} sx={{justifyContent: "center"}}>
                 {cards.map((card) => <HomeCard key={card} card={card}/>)}
             </Grid>
 

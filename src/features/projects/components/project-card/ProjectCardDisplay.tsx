@@ -23,7 +23,7 @@ export default function ProjectCardDisplay({project, onEdit}: ProjectCardDisplay
                 </Box>
             </CardContent>
             <CardActions>
-                <Box display={"flex"} justifyContent={"flex-end"} width={"100%"} marginInlineEnd={"8px"}>
+                <Box sx={{display: "flex", justifyContent: "flex-end", width: "100%", marginInlineEnd: "8px"}}>
                     {!project.archived &&
                         <Button
                             color={"primary"}

@@ -11,7 +11,7 @@ describe("Edit Panel", () => {
         render(<EditPanel onSave={fun} onArchive={fun} onDelete={fun} onCancel={fun} isSubmitting={false}/>)
 
         // THEN
-        const deleteButton = screen.queryByTestId("DeleteOutlineIcon");
+        const deleteButton = screen.queryByTestId("DeleteOutlinedIcon");
         const archiveButton = screen.queryByTestId("ArchiveOutlinedIcon");
         const checkButton = screen.queryByTestId("CheckIcon");
         const cancelButton = screen.queryByTestId("CancelIcon");
@@ -47,7 +47,7 @@ describe("Edit Panel", () => {
         const fun = () => {}
         render(<EditPanel onSave={fun} onArchive={fun} onDelete={deleteMock} onCancel={fun} isSubmitting={false}/>)
 
-        const deleteButton = screen.getByTestId("DeleteOutlineIcon");
+        const deleteButton = screen.getByTestId("DeleteOutlinedIcon");
         await user.click(deleteButton);
         await user.click(screen.getByText("button.continue"));
 

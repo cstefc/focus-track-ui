@@ -1,3 +1,4 @@
+import {MenuList} from "@mui/material";
 import {render, screen} from "@testing-library/react";
 import AuthContainerGoogleLogout from "@/components/ui/appbar/auth-container/AuthContainerGoogleLogout";
 import userEvent from "@testing-library/user-event";
@@ -7,7 +8,7 @@ describe("AuthContainerGoogleLogout", () => {
         // GIVEN
 
         // WHEN
-        render(<AuthContainerGoogleLogout hidden={false} handleLogout={() => {}}/>);
+        render(<MenuList><AuthContainerGoogleLogout hidden={false} handleLogout={() => {}}/></MenuList>);
 
         // THEN
         const button = screen.queryByText('authentication.signOut');
@@ -18,7 +19,7 @@ describe("AuthContainerGoogleLogout", () => {
         // GIVEN
 
         // WHEN
-        render(<AuthContainerGoogleLogout hidden={true} handleLogout={() => {} } />);
+        render(<MenuList><AuthContainerGoogleLogout hidden={true} handleLogout={() => {} } /></MenuList>);
 
         // THEN
         const button = screen.queryByText('authentication.signOut');
@@ -31,7 +32,7 @@ describe("AuthContainerGoogleLogout", () => {
         const logoutMock = vi.fn();
 
         // WHEN
-        render(<AuthContainerGoogleLogout hidden={false} handleLogout={logoutMock} />);
+        render(<MenuList><AuthContainerGoogleLogout hidden={false} handleLogout={logoutMock} /></MenuList>);
         await user.click(screen.getByText("authentication.signOut"));
 
         // THEN

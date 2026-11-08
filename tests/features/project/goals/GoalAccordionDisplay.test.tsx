@@ -1,7 +1,9 @@
 import {Priority} from "../../../../src/api/domain/predefined/Priority";
 import {Goal} from "../../../../src/api/domain/projects/Goal";
 import {render, screen} from "@testing-library/react";
-import GoalAccordionDisplay from "../../../../src/features/project/components/goals/GoalAccordionDisplay";
+import {
+    GoalAccordionDisplay
+} from "../../../../src/features/project/components/goals/GoalAccordionDisplay";
 import userEvent from "@testing-library/user-event";
 
 describe("GoalAccordionDisplay", () => {
@@ -40,7 +42,7 @@ describe("GoalAccordionDisplay", () => {
 
             // WHEN
             render(<GoalAccordionDisplay goal={goal} handleDelete={deleteHandler} toggleEdit={editHandler}/>)
-            await user.click(screen.getByTestId('DeleteOutlineIcon'))
+            await user.click(screen.getByTestId('DeleteOutlinedIcon'))
 
             // THEN
             expect(deleteHandler).toHaveBeenCalled()

@@ -11,12 +11,12 @@ export default function AuthContainerTitle({user}: AuthContainerTitleProps) {
     const {t} = useTranslation("general");
 
     return (
-        <Stack direction={"row"} alignItems={"center"} spacing={1}>
+        <Stack direction={"row"} spacing={1} sx={{alignItems: "center"}}>
             {user && (
                 <Avatar src={user.photoURL || undefined} alt="profile_pic"/>
             )}
 
-            <Typography variant="body1" color={"inherit"} whiteSpace={"nowrap"}>
+            <Typography variant="body1" color={"inherit"} sx={{whiteSpace: "nowrap"}}>
                 {user?.displayName || t("authentication.signIn")}
             </Typography>
         </Stack>

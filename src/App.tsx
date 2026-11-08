@@ -29,7 +29,7 @@ function App() {
                         element={
                             <>
                                 <MyAppBar/>
-                                <Box marginTop={"65px"} padding={0}>
+                                <Box sx={{marginTop: "65px", padding: 0}}>
                                     {route.protected ? (
                                         <AuthChecker>
                                             <route.component/>

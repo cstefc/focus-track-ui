@@ -19,7 +19,7 @@ export default function MyMobileAppBar() {
 
     return (
         <>
-            <Box display={{xs: "flex", md: "none"}}>
+            <Box sx={{display: {xs: "flex", md: "none"}}}>
                 <IconButton color="inherit" onClick={() => setOpen(!open)}>
                     <MenuIcon/>
                 </IconButton>
@@ -28,7 +28,7 @@ export default function MyMobileAppBar() {
             {<AppBarLogo/>}
 
             <Drawer open={open} onClose={() => setOpen(false)}>
-                <Box display={"flex"} flexDirection={"column"} height={"100%"} justifyContent={"space-between"}>
+                <Box sx={{display: "flex", flexDirection: "column", height: "100%", justifyContent: "space-between"}}>
                     <List>
                         {currentRoutes.map((route: RouteType) =>
                             <ListItem
@@ -45,14 +45,14 @@ export default function MyMobileAppBar() {
                         )}
                     </List>
 
-                    <Box paddingTop={"auto"}>
+                    <Box sx={{paddingTop: "auto"}}>
                         <LanguageBox/>
                         <ThemeBox/>
                     </Box>
                 </Box>
             </Drawer>
 
-            <Stack direction={"row"} marginInlineStart={"auto"} display={{md: "none"}}>
+            <Stack direction={"row"} sx={{marginInlineStart: "auto", display: {md: "none"}}}>
                 <AuthContainer/>
             </Stack>
         </>

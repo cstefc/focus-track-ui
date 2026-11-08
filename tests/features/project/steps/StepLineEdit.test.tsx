@@ -32,7 +32,7 @@ describe("StepLineEdit", () => {
         expect(screen.getByDisplayValue("Objective")).toBeInTheDocument()
         expect(screen.getByDisplayValue("Description")).toBeInTheDocument()
         expect(screen.getByDisplayValue("Requirements")).toBeInTheDocument()
-        expect(screen.getByLabelText("status.NotStarted")).toBeInTheDocument()
+        expect(screen.getByRole("combobox", {name: "forms.statusLabel"})).toHaveTextContent("status.NotStarted")
     })
 
     it("calls cancel handler", async () => {

@@ -28,7 +28,7 @@ export default function CreateProjectDialog(): JSX.Element {
 
     return (
         <>
-            <Box display={"flex"} justifyContent={"flex-end"} margin={2}>
+            <Box sx={{display: "flex", justifyContent: "flex-end", margin: 2}}>
                 <Button variant={"contained"} hidden={!showDialog}
                         onClick={() => setShowDialog(true)}
                 >
@@ -52,7 +52,7 @@ export default function CreateProjectDialog(): JSX.Element {
                         </DialogContent>
 
                         <DialogActions>
-                            <Stack direction={"row"} padding={1} spacing={1}>
+                            <Stack direction={"row"} spacing={1} sx={{padding: 1}}>
                                 <Button color={"secondary"} disabled={isSubmitting} onClick={() => {
                                     setShowDialog(false)
                                 }}>

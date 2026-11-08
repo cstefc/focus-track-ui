@@ -47,7 +47,7 @@ export const StepLineAdd = ({goalId, onCreate, sequence}: StepLineEditProps) => 
         <>
             {!adding && <TableRow>
                 <TableCell colSpan={6}>
-                    <Box display={"flex"} justifyContent={"flex-end"}>
+                    <Box sx={{display: "flex", justifyContent: "flex-end"}}>
                         <Button color={"success"} variant={"outlined"} onClick={() => {
                             setAdding(true)
                         }}>
@@ -104,11 +104,11 @@ export const StepLineAdd = ({goalId, onCreate, sequence}: StepLineEditProps) => 
                 </TableCell>
                 <TableCell align="center">
                     <Stack direction={"row"}>
-                        <Button color={"success"} onClick={() => {
-                            handleSubmit(onCreate)();
+                        <Button color={"success"} onClick={handleSubmit((data) => {
+                            onCreate(data);
                             reset();
                             setAdding(false);
-                        }}><SaveOutlined/></Button>
+                        })}><SaveOutlined/></Button>
                         <Button color={"error"} onClick={cancelHandler}><CancelIcon/></Button>
                     </Stack>
                 </TableCell>

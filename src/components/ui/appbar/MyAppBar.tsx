@@ -8,11 +8,11 @@ export default function MyAppBar() {
         <MuiAppBar position="fixed" sx={{height: "65px", justifyContent: "center"}}>
             <Toolbar disableGutters>
                 <Container maxWidth="xl">
-                    <Box display={{xs: "flex", md: "none"}}>
+                    <Box sx={{display: {xs: "flex", md: "none"}}}>
                         <MyMobileAppBar/>
                     </Box>
 
-                    <Box display={{xs: "none", md: "flex"}}>
+                    <Box sx={{display: {xs: "none", md: "flex"}}}>
                         <MyDesktopAppBar/>
                     </Box>
                 </Container>

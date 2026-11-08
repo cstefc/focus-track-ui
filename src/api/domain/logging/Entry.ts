@@ -1,4 +1,4 @@
-import {string, number, z} from "zod/index";
+import {string, number, z} from "zod";
 import {CreateProjectForm} from "../projects/Project";
 import {EntryType} from "../predefined/EntryType";
 

@@ -25,7 +25,7 @@ describe("DayButton", () => {
         // THEN
         const button = screen.getByRole('button');
         expect(button).toBeInTheDocument();
-        expect(button).toHaveClass("MuiButton-containedPrimary");
+        expect(button).toHaveClass("MuiButton-contained");
     });
 
     test("prev month disabled", () => {

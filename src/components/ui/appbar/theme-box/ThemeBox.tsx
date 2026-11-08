@@ -13,7 +13,7 @@ export default function ThemeBox() {
     const handleClose = () => setAnchorEl(null);
 
     return (
-        <Box display={"flex"} alignItems={"center"}>
+        <Box sx={{display: "flex", alignItems: "center"}}>
             <ListItem
                 onClick={handleOpen}
                 sx={{

@@ -14,8 +14,7 @@ export default function DayView({date}: CalendarDayProps) {
     return (
         <Card>
             <CardContent>
-                <Stack direction={"column"} display={"flex"} alignItems={"center"} justifyContent={"center"} padding={2}
-                       spacing={1} width={120} height={120}>
+                <Stack direction={"column"} spacing={1} sx={{display: "flex", alignItems: "center", justifyContent: "center", padding: 2, width: 120, height: 120}}>
                     <Typography variant={"h5"} component={"div"} color={color}>{t(days[date.getDay()])}</Typography>
                     <Typography variant={"h5"} component={"div"} color={color}>{date.getDate()}</Typography>
                 </Stack>

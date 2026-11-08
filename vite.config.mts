@@ -14,7 +14,7 @@ export default defineConfig({
     build:{
         outDir:'build',
         sourcemap: false,
-        minify:"esbuild"
+        minify:"oxc"
     },
     test: {
         include: ['tests/**/*.{test,spec}.{ts,tsx}'],
