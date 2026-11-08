@@ -1,6 +1,6 @@
 import {Button, Stack, TableCell, TableRow} from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutlined";
 import React from "react";
 import {Step} from "@/api/domain/projects/Step";
 import {Status} from "@/api/domain/predefined/Status";
